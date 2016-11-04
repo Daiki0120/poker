@@ -27,5 +27,14 @@ window.getDeck = function() {
 }
 
 $(function() {
+
+  $(".deal").on("click", function(event){
+event.preventDefault()
+var deck=getDeck().shuffle()
+var fiveCards=deck.splice(0,5)
+fiveCards.forEach(card, index, function(card, index){
+$("#c" + (index + 1)).attr("src", "http://golearntocode.com/images/cards/" + card +".png")
+}
+  })
   // Your code goes here!
 })
